@@ -1,0 +1,46 @@
+CREATE DATABASE venta_vuelos;
+
+USE venta_vuelos;
+
+CREATE TABLE Avion (
+    avion_id INT AUTO_INCREMENT PRIMARY KEY,
+    modelo VARCHAR(255),
+    capacidad INT,
+    aerolinea VARCHAR(255)
+);
+
+CREATE TABLE Cliente (
+    cliente_id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    email VARCHAR(255),
+    telefono VARCHAR(255),
+    dni_cli VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE Vuelo (
+    vuelo_id INT AUTO_INCREMENT PRIMARY KEY,
+    origen VARCHAR(255),
+    destino VARCHAR(255),
+    fecha_salida VARCHAR(255),
+    fecha_llegada VARCHAR(255),
+    cod_vuelo VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE Reserva (
+    reserva_id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_reserva VARCHAR(255),
+    cod_vuelo VARCHAR(255),
+    dni_cli VARCHAR(255),
+    FOREIGN KEY (cod_vuelo) REFERENCES Vuelo(cod_vuelo),
+    FOREIGN KEY (dni_cli) REFERENCES Cliente(dni_cli)
+);
+
+CREATE TABLE Asiento (
+    asiento_id INT AUTO_INCREMENT PRIMARY KEY,
+    numero_asiento VARCHAR(255),
+    clase VARCHAR(255),
+    estado VARCHAR(255),
+    cod_vuelo VARCHAR(255),
+    FOREIGN KEY (cod_vuelo) REFERENCES Vuelo(cod_vuelo)
+);

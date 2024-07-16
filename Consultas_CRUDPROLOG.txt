@@ -1,0 +1,32 @@
+crear_avion('Boeing 737', 180, 'Aerolineas Argentinas', Affected).
+crear_cliente('Juan', 'Perez', 'juan@example.com', '123456789', '12345678Z', Affected).
+crear_vuelo('Buenos Aires', 'Madrid', '2024-07-10', '2024-07-11', 'AR123', Affected).
+crear_reserva('2024-07-05', 'AR123', '12345678Z', Affected).
+crear_asiento('1A', 'Primera Clase', 'Disponible', 'AR123', Affected).
+
+leer_aviones(Aviones).
+leer_clientes(Clientes).
+leer_vuelos(Vuelos).
+leer_reservas(Reservas).
+leer_asientos(Asientos).
+
+actualizar_avion('1', 'Airbus A320', 150, 'Iberia', Affected).
+actualizar_cliente('1', 'Pedro', 'Gonzalez', 'pedro@example.com', '987654321', '12345678Z', Affected).
+actualizar_vuelo('1', 'Madrid', 'Paris', '2024-07-12', '2024-07-12', 'AR123', Affected).
+actualizar_reserva('1', '2024-07-06', 'AR123', '12345678Z', Affected).
+actualizar_asiento('1', '2B', 'Economy Class', 'Ocupado', 'AR123', Affected).
+
+borrar_asiento('1', Affected).
+borrar_reserva('1', Affected).
+borrar_vuelo('1', Affected).
+borrar_cliente('1', Affected).
+borrar_avion('1', Affected).
+
+
+
+
+
+
+
+
+
